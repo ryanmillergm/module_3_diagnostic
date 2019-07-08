@@ -1,2 +1,12 @@
 
 <p><%= @foods[0].total %> for <%= @foods[0].name %></p>
+
+<% @foods[0].items.each_with_index  do |item, num| %>
+  <section id="results-<%= num %>">
+    <p>group: <%= item[:group] %> </p>
+    <p>name: <%= item[:name] %> </p>
+    <p>ndbno: <%= item[:ndbno] %> </p>
+    <p>ds: <%= item[:ds] %> </p>
+    <p>manu: <%= item[:manu] %> </p>
+  </section>
+<% end %>

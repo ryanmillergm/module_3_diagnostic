@@ -9,8 +9,8 @@ feature "as a user" do
     click_on "Search"
 
     expect(current_path).to eq('/foods')
+    save_and_open_page
     expect(page).to have_content("531 for sweet potatoes")
-
     within("#results-1") do
       expect(page).to have_content("Branded Food Products Database")
       expect(page).to have_content("AHOLD, SIMPLY ENJOY, GOURMET DIP WITH PEPPER TOPPING, SWEET POTATO HARISSA, UPC: 688267161926")

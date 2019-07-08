@@ -9,19 +9,19 @@ feature "as a user" do
     click_on "Search"
 
     expect(current_path).to eq('/foods')
-    save_and_open_page
+
     expect(page).to have_content("531 for sweet potatoes")
     within("#results-1") do
       expect(page).to have_content("Branded Food Products Database")
-      expect(page).to have_content("AHOLD, SIMPLY ENJOY, GOURMET DIP WITH PEPPER TOPPING, SWEET POTATO HARISSA, UPC: 688267161926")
+      expect(page).to have_content("AHOLD, SIMPLY ENJOY, GOURMET DIP WITH PEPPER TOPPING, SWEET POTATO HARISSA")
       expect(page).to have_content("45046964")
       expect(page).to have_content("LI")
       expect(page).to have_content("Ahold USA, Inc.")
     end
     within("#results-10") do
       expect(page).to have_content("Baby Foods")
-      expect(page).to have_content("Babyfood, dinner, sweet potatoes and chicken, strained")
-      expect(page).to have_content("03303")
+      expect(page).to have_content("Babyfood, corn and sweet potatoes, strained")
+      expect(page).to have_content("3934")
       expect(page).to have_content("SR")
       expect(page).to have_content("none")
     end

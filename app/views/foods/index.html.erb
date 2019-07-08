@@ -2,7 +2,8 @@
 <p><%= @foods[0].total %> for <%= @foods[0].name %></p>
 
 <% @foods[0].items.each_with_index  do |item, num| %>
-  <section id="results-<%= num %>">
+  <h3>Result <%= num + 1 %> </h3>
+  <section id="results-<%= num + 1 %>">
     <p>group: <%= item[:group] %> </p>
     <p>name: <%= item[:name] %> </p>
     <p>ndbno: <%= item[:ndbno] %> </p>

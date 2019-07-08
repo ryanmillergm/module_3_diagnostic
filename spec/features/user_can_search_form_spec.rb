@@ -4,10 +4,10 @@ feature "as a user" do
   scenario "on the home page I can search form" do
     visit "/"
 
-    fill_in "search", with: "sweet potatoes"
+    fill_in "q", with: "sweet potatoes"
 
     click_on "Search"
-    binding.pry
+
     expect(current_path).to eq('/foods')
     expect(page).to have_content("531 for sweet potatoes")
   end

@@ -10,6 +10,24 @@ feature "as a user" do
 
     expect(current_path).to eq('/foods')
     expect(page).to have_content("531 for sweet potatoes")
+
+    within("#results-1") do
+      expect(page).to have_content("Branded Food Products Database")
+      expect(page).to have_content("AHOLD, SIMPLY ENJOY, GOURMET DIP WITH PEPPER TOPPING, SWEET POTATO HARISSA, UPC: 688267161926")
+      expect(page).to have_content("45046964")
+      expect(page).to have_content("LI")
+      expect(page).to have_content("Ahold USA, Inc.")
+    end
+    within("#results-10") do
+      expect(page).to have_content("Baby Foods")
+      expect(page).to have_content("Babyfood, dinner, sweet potatoes and chicken, strained")
+      expect(page).to have_content("03303")
+      expect(page).to have_content("SR")
+      expect(page).to have_content("none")
+    end
+    within("#results-11") do
+      expect(page).to_not have_content("name")
+    end
   end
 end
 
@@ -22,3 +40,10 @@ end
 # Then I should see a total of the number of items
 # returned by the search. (531 for sweet potatoes)
 # Then I should see a list of ten foods sorted by relevance.
+
+# And for each of the foods I should see:
+# - The food's NDB Number
+# - The food's name
+# - The food group to which the food belongs
+# - The food's data source
+# - The food's manufacturer

@@ -7,7 +7,7 @@ feature "as a user" do
     fill_in "search", with: "sweet potatoes"
 
     click_on "Search"
-
+    binding.pry
     expect(current_path).to eq('/foods')
     expect(page).to have_content("531 for sweet potatoes")
   end

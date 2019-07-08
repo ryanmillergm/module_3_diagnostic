@@ -14,3 +14,4 @@ $ rails s
 Navigate to `http://localhost:3000`
 
 This should bring up an error, but you should be able to start the server fine.
+# whats-in-my-food
